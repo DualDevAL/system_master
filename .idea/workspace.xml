@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46921df5-bb1e-4d38-a32a-1fc401ebef64" name="Default Changelist" comment="" />
+    <list default="true" id="46921df5-bb1e-4d38-a32a-1fc401ebef64" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_auto_20210419_0436.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/gaming_platform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/gaming_platform/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/models.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -41,5 +48,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="215" y="25" width="838" height="1032" key="search.everywhere.popup" timestamp="1618805117608">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="215" y="25" width="838" height="1032" key="search.everywhere.popup/1440.-44.1920.1055/0.25.1440.817@0.25.1440.817" timestamp="1618805117608" />
   </component>
 </project>
