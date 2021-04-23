@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46921df5-bb1e-4d38-a32a-1fc401ebef64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_auto_20210419_0436.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaming_platform/gaming_platform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/gaming_platform/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
