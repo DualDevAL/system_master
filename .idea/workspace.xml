@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="46921df5-bb1e-4d38-a32a-1fc401ebef64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_auto_20210419_0436.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_remove_post_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0003_alter_gamecategory_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0004_post_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP_V8nF3n3.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP_iea00IR.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP_kd9W2zj.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP_tzpGNH1.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gaming_platform/gaming_platform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/gaming_platform/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/gaming_platform/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/gaming_platform/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_auto_20210419_0436.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
