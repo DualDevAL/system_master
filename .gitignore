@@ -4,3 +4,5 @@ venv
 *.jpg
 *.png
 *.jfif
+*.jpeg
+/__pycache__

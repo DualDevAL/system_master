@@ -17,7 +17,7 @@ class PostgAdmin(admin.ModelAdmin):
     list_filter = ('status', 'value', 'author')
     #readonly_fields = ('visualizar_imagem',)
     #date_hierarchy = 'disponivel'
-    raw_id_fields = ('author',) 
+    raw_id_fields = ('author',)
     search_fields = ('title', 'description')
     prepopulated_fields = {'slug': ('title',)}
 
