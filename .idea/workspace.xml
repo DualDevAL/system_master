@@ -21,6 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="46921df5-bb1e-4d38-a32a-1fc401ebef64" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+=======
+>>>>>>> 1ed92899fc7b8ad654a0618a90b93ffd058f44eb
       <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_remove_post_category.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0003_alter_gamecategory_options.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0004_post_category.py" afterDir="false" />
@@ -39,10 +45,14 @@
       <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_auto_20210419_0436.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/models.py" afterDir="false" />
+<<<<<<< HEAD
 =======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
 >>>>>>> 0c7556e86429f1f9c49e1c91634dd811058df8f8
+=======
+>>>>>>> 1d1f6e032b896f5ab1a01d39f29d9f27798ffe82
+>>>>>>> 1ed92899fc7b8ad654a0618a90b93ffd058f44eb
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

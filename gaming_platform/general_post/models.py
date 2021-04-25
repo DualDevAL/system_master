@@ -9,7 +9,7 @@ from django.utils.html import mark_safe
 # Create your models here.
 
 
-class GameCategory(models.Model):# nova função mais recente teve que fazer a instalção de bliblioteca pipenv install pillow
+class GameCategory(models.Model):
     name = models.CharField(max_length=100)
     published = models.DateTimeField(default=now)
     servant = models.DateTimeField(auto_now_add=True)
@@ -17,6 +17,45 @@ class GameCategory(models.Model):# nova função mais recente teve que fazer a i
     class Meta:
         verbose_name = "Adicionar Gênero"
         verbose_name_plural = "Adicionar Gêneros"
+        ordering = ["-servant"]
+
+    def __str__(self):
+        return self.name
+
+class publisher(models.Model):
+    name = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    servant = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Adicionar Editora"
+        verbose_name_plural = "Adicionar Editora"
+        ordering = ["-servant"]
+
+    def __str__(self):
+        return self.name
+
+class Operational_System(models.Model):
+    name = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    servant = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Adicionar Sistema Operacional"
+        verbose_name_plural = "Adicionar Sistema Operacional"
+        ordering = ["-servant"]
+
+    def __str__(self):
+        return self.name
+
+class Select_Language(models.Model):
+    name = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    servant = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Adicionar Linguagem"
+        verbose_name_plural = "Adicionar Linguagem"
         ordering = ["-servant"]
 
     def __str__(self):
@@ -41,9 +80,11 @@ class Post(models.Model):
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     
     published = models.DateTimeField(default=now, null=True, verbose_name='Publicado')
+    publisher = models.ManyToManyField(publisher, related_name="get_posts", verbose_name='Editora', null=True)
+    Operational_System = models.ManyToManyField(Operational_System, related_name="get_posts", verbose_name='Sistema Operacional', null=True)
     servant = models.DateTimeField(auto_now_add=True)
     Changed = models.DateTimeField(auto_now=True)
-
+    Select_Language = models.ManyToManyField(Select_Language, related_name="get_posts", verbose_name='Linguagens', null=True)
     value = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Valor', null=True,)
 
     def get_absolute_url(self):
@@ -56,13 +97,3 @@ class Post(models.Model):
     def __str__(self):
         return str(self.title).capitalize()
 
-    
-
-'''@receiver(template, sender=Post)
-def insert_slug(sender, instance, **kwargs):
-    if kwargs.get('created', False):
-        print('Criando slug')
-    if not instance.slug:
-        instance.slug = slugify(instance.titulo)
-        return instance.save
-'''
