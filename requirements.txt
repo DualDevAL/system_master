@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 pip
 Pillow
 pipenv
 Django
 setuptools
 django-ckeditor
+=======
+pip               
+Pillow           
+pipenv            
+Django            
+setuptools        
+django-ckeditor   
+>>>>>>> 1d1f6e032b896f5ab1a01d39f29d9f27798ffe82
