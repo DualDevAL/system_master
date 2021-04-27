@@ -1,29 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-pip
-Pillow
-pipenv
-Django
-setuptools
-django-ckeditor
-=======
-pip               
-Pillow           
-pipenv            
-Django            
-setuptools        
-django-ckeditor   
->>>>>>> 1d1f6e032b896f5ab1a01d39f29d9f27798ffe82
-=======
-
 pip==21.0.1
 Pillow==8.2.0
 pipenv==2020.11.15
 Django==3.2
 setuptools==49.2.1
 django-ckeditor==6.0.0
-
-
-
-
->>>>>>> 1ed92899fc7b8ad654a0618a90b93ffd058f44eb
