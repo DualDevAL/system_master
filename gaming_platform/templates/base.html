@@ -48,10 +48,10 @@
           {% else %}
 
             <li class="nav-item">
-              <a class="nav-link text-success" href="{% url 'login' %}">Entrar</a>
+              <a class="nav-link text-success" href="{% url 'account_login' %}">Entrar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'signup' %}">Junte-se a GameStation</a>
+              <a class="nav-link" href="{% url 'account_signup' %}">Junte-se a GameStation</a>
             </li>
 
           {% endif %}
@@ -74,15 +74,15 @@
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
 
-          <img class="d-block img-fluid" src="media\general_post\forza.png" alt="First slide">
+          <img class="d-block img-fluid" src="{% static 'img/forza.png' %}" alt="First slide">
 
         </div>
       
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="media\general_post\death_stranding.png" alt="Second slide">
+          <img class="d-block img-fluid" src="{% static 'img/death_stranding.png' %}" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="media\general_post\gears_of_war5.png" alt="Third slide">
+          <img class="d-block img-fluid" src="{% static 'img/gears_of_war5.png' %}" alt="Third slide">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carousell" role="button" data-slide="prev">
@@ -96,7 +96,7 @@
     </div>
 
     </div>
-
+    {% block header %}{% endblock header %}
     <div class="container">
       <div class="row">
         {% block content %}{% endblock content%}
