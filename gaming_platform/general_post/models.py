@@ -1,11 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
-from django.db.models.signals import post_save
-from django.utils.text import slugify
-from django.urls import reverse
+#from django.db.models.signals import post_save
+#from django.utils.text import slugify
+#from django.urls import reverse
 from ckeditor.fields import RichTextField
-from django.utils.html import mark_safe
+#from django.utils.html import mark_safe
 # Create your models here.
 
 
@@ -87,8 +87,8 @@ class Post(models.Model):
     Select_Language = models.ManyToManyField(Select_Language, related_name="get_posts", verbose_name='Linguagens', null=True)
     value = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Valor', null=True,)
 
-    def get_absolute_url(self):
-        return reverse('home', args=[self.pk])
+    #def get_absolute_url(self):
+    #    return reverse('home', args=[self.pk])
 
     class Meta:
         verbose_name = "Adicionar Jogo"
