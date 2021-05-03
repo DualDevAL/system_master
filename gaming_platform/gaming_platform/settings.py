@@ -39,20 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django.contrib.sites",
+    'django.contrib.sites',
     #-----------------
     'bootstrapform',
     'ckeditor',
     'general_post',
-    'accounts',
     # 3rd party
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    "crispy_forms",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'crispy_forms',
     # local
-    #"users.apps.UsersConfig",
-    "pages.apps.PagesConfig",
+    #'users.apps.UsersConfig',
+    #'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
