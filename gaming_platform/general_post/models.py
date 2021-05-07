@@ -12,51 +12,142 @@ from ckeditor.fields import RichTextField
 class GameCategory(models.Model):
     name = models.CharField(max_length=100)
     published = models.DateTimeField(default=now)
-    servant = models.DateTimeField(auto_now_add=True)
+    create = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Adicionar Gênero"
         verbose_name_plural = "Adicionar Gêneros"
-        ordering = ["-servant"]
+        ordering = ["-create"]
 
     def __str__(self):
         return self.name
 
-class publisher(models.Model):
+
+class Publisher(models.Model):
     name = models.CharField(max_length=100)
     published = models.DateTimeField(default=now)
-    servant = models.DateTimeField(auto_now_add=True)
+    create = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Adicionar Editora"
         verbose_name_plural = "Adicionar Editora"
-        ordering = ["-servant"]
+        ordering = ["-create"]
 
     def __str__(self):
         return self.name
+
+
+class Age_Range(models.Model):
+    age = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    create = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Faixa Etária"
+        verbose_name_plural = "Faixa Etária"
+        ordering = ["-create"]
+
+    def __str__(self):
+        return self.age
+
 
 class Operational_System(models.Model):
     name = models.CharField(max_length=100)
     published = models.DateTimeField(default=now)
-    servant = models.DateTimeField(auto_now_add=True)
+    create = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Adicionar Sistema Operacional"
         verbose_name_plural = "Adicionar Sistema Operacional"
-        ordering = ["-servant"]
+        ordering = ["-create"]
 
     def __str__(self):
         return self.name
 
+
+
+class Graphics_Engine(models.Model):
+    name = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    create = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Motor Gráfico"
+        verbose_name_plural = "Motor Gráfico"
+        ordering = ["-create"]
+
+    def __str__(self):
+        return self.name
+
+
+class Designer(models.Model):
+    name = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    create = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "designer"
+        verbose_name_plural = "designer"
+        ordering = ["-create"]
+
+    def __str__(self):
+        return self.name
+
+
 class Select_Language(models.Model):
     name = models.CharField(max_length=100)
     published = models.DateTimeField(default=now)
-    servant = models.DateTimeField(auto_now_add=True)
+    create = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Adicionar Linguagem"
         verbose_name_plural = "Adicionar Linguagem"
-        ordering = ["-servant"]
+        ordering = ["-create"]
+
+    def __str__(self):
+        return self.name
+
+
+
+class MinimumRequirements(models.Model):
+    name = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    create = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Requisitos Minimos"
+        verbose_name_plural = "Requisitos Minimos"
+        ordering = ["-create"]
+
+    def __str__(self):
+        return self.name
+
+
+
+class RecommendedRequirements(models.Model):
+    name = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    create = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Requisitos Recomendados"
+        verbose_name_plural = "Requisitos Recomendados"
+        ordering = ["-create"]
+
+    def __str__(self):
+        return self.name
+
+
+
+class Player(models.Model):
+    name = models.CharField(max_length=100)
+    published = models.DateTimeField(default=now)
+    create = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Número de Jogadores"
+        verbose_name_plural = "Adicionar Linguagem"
+        ordering = ["-create"]
 
     def __str__(self):
         return self.name
@@ -68,7 +159,8 @@ class Post(models.Model):
         ('disponivel', 'Disponivel'),
         ('indisponivel', 'Indisponivel')
 
-    )
+    )       
+
 
     title = models.CharField(max_length=200, verbose_name='Título do jogo',  null=True)
     slug = models.SlugField(max_length=200, null=True)
@@ -80,15 +172,19 @@ class Post(models.Model):
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     
     published = models.DateTimeField(default=now, null=True, verbose_name='Publicado')
-    publisher = models.ManyToManyField(publisher, related_name="get_posts", verbose_name='Editora', null=True)
+    publisher = models.ManyToManyField(Publisher, related_name="get_posts", verbose_name='Editora', null=True)
     Operational_System = models.ManyToManyField(Operational_System, related_name="get_posts", verbose_name='Sistema Operacional', null=True)
     servant = models.DateTimeField(auto_now_add=True)
     Changed = models.DateTimeField(auto_now=True)
     Select_Language = models.ManyToManyField(Select_Language, related_name="get_posts", verbose_name='Linguagens', null=True)
     value = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Valor', null=True,)
-
-    #def get_absolute_url(self):
-    #    return reverse('home', args=[self.pk])
+    age_range = models.ManyToManyField(Age_Range, related_name="get_posts", verbose_name='Faixa Etária', null=True)
+    graphics_engine =  models.ManyToManyField(Graphics_Engine, related_name="get_posts", verbose_name='Motor Gráfico', null=True)
+    designer = models.ManyToManyField(Designer, related_name="get_posts", verbose_name='Projetista', null=True)
+    player = models.ManyToManyField(Player, related_name="get_posts", verbose_name='Número de Jogadores', null=True)
+    minimum_requirements = models.ManyToManyField(MinimumRequirements, related_name="get_posts", verbose_name='Requisitos Minimos', null=True)
+    recommended_requirements = models.ManyToManyField(RecommendedRequirements, related_name="get_posts", verbose_name='Requisitos Recomendados', null=True)
+   
 
     class Meta:
         verbose_name = "Adicionar Jogo"
