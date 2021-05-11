@@ -5,8 +5,9 @@ from .models import Post
 
 
 class Postform(ModelForm):
-    conteudo = CharField(widget=CKEditorWidget())
+    description = CharField(widget=CKEditorWidget())
 
     class Meta:
         model = Post
-        fields = ("titulo", "categoria", "conteudo", "imagem", "status")
+        fields = ("title" , "publisher", "genre", "description", "image", "value", "status")
+

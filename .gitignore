@@ -5,4 +5,7 @@ venv
 *.jfif
 *.jpeg
 *.pyc
-*.vscode/
+
+*.DS_Store
+*.VScode
+>>>>>>> 9339d95baa8fa41a9f46d082ac02df14a838744f
