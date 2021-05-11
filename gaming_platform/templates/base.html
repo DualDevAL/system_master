@@ -38,7 +38,7 @@
           </li>
           {% if user.is_authenticated %}
 
-            <li class="nav-item"> <a class="nav-link" href="#">Adicionar Novo jogo</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'post_new' %}">Adicionar Novo jogo</a> </li>
             <li class="nav-item">
               <a class="nav-link text-success">Olá {{user.username}} </a>
             </li>
