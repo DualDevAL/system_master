@@ -6,3 +6,4 @@ setuptools==49.2.1
 django-ckeditor==6.0.0
 django-allaut==0.44.0
 django-crispy-forms==1.11.2 
+django-adminlte3==0.1.6

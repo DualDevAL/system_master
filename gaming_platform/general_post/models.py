@@ -185,7 +185,6 @@ class Post(models.Model):
     minimum_requirements = models.ManyToManyField(MinimumRequirements, related_name="get_posts", verbose_name='Requisitos Minimos', null=True)
     recommended_requirements = models.ManyToManyField(RecommendedRequirements, related_name="get_posts", verbose_name='Requisitos Recomendados', null=True)
    
-
     class Meta:
         verbose_name = "Adicionar Jogo"
         verbose_name_plural = "Adicionar Jogos"
