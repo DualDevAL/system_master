@@ -5,3 +5,4 @@ venv
 *.jfif
 *.jpeg
 *.pyc
+*.vscode/
