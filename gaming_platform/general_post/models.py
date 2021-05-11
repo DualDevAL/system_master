@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils.timezone import now
 #from django.db.models.signals import post_save
 #from django.utils.text import slugify
-#from django.urls import reverse
+from django.urls import reverse
 from ckeditor.fields import RichTextField
 #from django.utils.html import mark_safe
 # Create your models here.
@@ -166,25 +166,28 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, null=True)
     author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
 
-    genre = models.ManyToManyField(GameCategory, related_name="get_posts", verbose_name='Gênero', null=True)
+    genre = models.ManyToManyField(GameCategory, related_name="get_posts", verbose_name='Gênero', blank=True, null=True)
     image = models.ImageField(upload_to='general_post', blank=True, null=True, verbose_name='Imagem')
-    description = RichTextField(max_length=500, verbose_name='Descrição', null=True)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     
-    published = models.DateTimeField(default=now, null=True, verbose_name='Publicado')
-    publisher = models.ManyToManyField(Publisher, related_name="get_posts", verbose_name='Editora', null=True)
-    Operational_System = models.ManyToManyField(Operational_System, related_name="get_posts", verbose_name='Sistema Operacional', null=True)
-    servant = models.DateTimeField(auto_now_add=True)
-    Changed = models.DateTimeField(auto_now=True)
-    Select_Language = models.ManyToManyField(Select_Language, related_name="get_posts", verbose_name='Linguagens', null=True)
-    value = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Valor', null=True,)
-    age_range = models.ManyToManyField(Age_Range, related_name="get_posts", verbose_name='Faixa Etária', null=True)
-    graphics_engine =  models.ManyToManyField(Graphics_Engine, related_name="get_posts", verbose_name='Motor Gráfico', null=True)
-    designer = models.ManyToManyField(Designer, related_name="get_posts", verbose_name='Projetista', null=True)
-    player = models.ManyToManyField(Player, related_name="get_posts", verbose_name='Número de Jogadores', null=True)
-    minimum_requirements = models.ManyToManyField(MinimumRequirements, related_name="get_posts", verbose_name='Requisitos Minimos', null=True)
-    recommended_requirements = models.ManyToManyField(RecommendedRequirements, related_name="get_posts", verbose_name='Requisitos Recomendados', null=True)
+    published = models.DateTimeField(default=now, null=True, verbose_name='Publicado' ,blank=True)
+    publisher = models.ManyToManyField(Publisher, related_name="get_posts", verbose_name='Editora', blank=True, null=True)
+    Operational_System = models.ManyToManyField(Operational_System, related_name="get_posts", verbose_name='Sistema Operacional', blank=True, null=True)
+    servant = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    Changed = models.DateTimeField(auto_now=True, blank=True, null=True)
+    Select_Language = models.ManyToManyField(Select_Language, related_name="get_posts", verbose_name='Linguagens', blank=True, null=True)
+    value = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Valor', null=True)
+    age_range = models.ManyToManyField(Age_Range, related_name="get_posts", verbose_name='Faixa Etária', blank=True, null=True)
+    graphics_engine =  models.ManyToManyField(Graphics_Engine, related_name="get_posts", verbose_name='Motor Gráfico', blank=True, null=True)
+    designer = models.ManyToManyField(Designer, related_name="get_posts", verbose_name='Projetista', blank=True, null=True)
+    player = models.ManyToManyField(Player, related_name="get_posts", verbose_name='Número de Jogadores', blank=True, null=True)
+    minimum_requirements = models.ManyToManyField(MinimumRequirements, related_name="get_posts", verbose_name='Requisitos Minimos', blank=True, null=True)
+    recommended_requirements = models.ManyToManyField(RecommendedRequirements, related_name="get_posts", verbose_name='Requisitos Recomendados', blank=True, null=True)
    
+
+    def get_absolute_url_update(self):
+            return reverse("post_new", args=[self.slug])
     class Meta:
         verbose_name = "Adicionar Jogo"
         verbose_name_plural = "Adicionar Jogos"
