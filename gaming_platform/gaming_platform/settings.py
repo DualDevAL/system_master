@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 
     
 INSTALLED_APPS = [
+    'adminlte3',
+    'adminlte3_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,7 +48,7 @@ INSTALLED_APPS = [
     'general_post',
     # 3rd party
     'allauth',
-    'allauth.account',
+    'allauth.account',''
     'allauth.socialaccount',
     'crispy_forms',
     # local

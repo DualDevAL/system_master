@@ -4,5 +4,7 @@ pipenv==2020.11.15
 Django==3.2
 setuptools==49.2.1
 django-ckeditor==6.0.0
-django-allauth==0.44.0
+django-allaut==0.44.0
 django-crispy-forms==1.11.2 
+django-adminlte3==0.1.6
+

@@ -185,9 +185,9 @@ class Post(models.Model):
     minimum_requirements = models.ManyToManyField(MinimumRequirements, related_name="get_posts", verbose_name='Requisitos Minimos', blank=True, null=True)
     recommended_requirements = models.ManyToManyField(RecommendedRequirements, related_name="get_posts", verbose_name='Requisitos Recomendados', blank=True, null=True)
    
+
     def get_absolute_url_update(self):
             return reverse("post_new", args=[self.slug])
-
     class Meta:
         verbose_name = "Adicionar Jogo"
         verbose_name_plural = "Adicionar Jogos"

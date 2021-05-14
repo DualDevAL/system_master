@@ -7,3 +7,6 @@ venv
 *.pyc
 *.DS_Store
 *.VScode
+staticfiles/
+*__pycache__/
+migrations/
