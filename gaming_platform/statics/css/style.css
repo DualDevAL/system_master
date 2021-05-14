@@ -1,0 +1,10 @@
+div#r-image{
+    max-height: 700px;
+    max-width: 500px;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+
+}

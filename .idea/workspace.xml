@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="46921df5-bb1e-4d38-a32a-1fc401ebef64" name="Default Changelist" comment="">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+=======
+>>>>>>> 1ed92899fc7b8ad654a0618a90b93ffd058f44eb
+      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_remove_post_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0003_alter_gamecategory_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0004_post_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP_V8nF3n3.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP_iea00IR.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP_kd9W2zj.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaming_platform/media/general_post/OIP_tzpGNH1.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/gaming_platform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/gaming_platform/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/gaming_platform/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/gaming_platform/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/migrations/0002_auto_20210419_0436.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaming_platform/general_post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaming_platform/general_post/models.py" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+>>>>>>> 0c7556e86429f1f9c49e1c91634dd811058df8f8
+=======
+>>>>>>> 1d1f6e032b896f5ab1a01d39f29d9f27798ffe82
+>>>>>>> 1ed92899fc7b8ad654a0618a90b93ffd058f44eb
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1rMYP7iZ4r9214cGoPy3MtBhzrO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46921df5-bb1e-4d38-a32a-1fc401ebef64" name="Default Changelist" comment="" />
+      <created>1618787417165</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618787417165</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="215" y="25" width="838" height="1032" key="search.everywhere.popup" timestamp="1618805117608">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="215" y="25" width="838" height="1032" key="search.everywhere.popup/1440.-44.1920.1055/0.25.1440.817@0.25.1440.817" timestamp="1618805117608" />
+  </component>
+</project>
