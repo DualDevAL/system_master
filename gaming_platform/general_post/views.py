@@ -19,7 +19,7 @@ class PostListView(ListView):
     template_name = 'post/home.html'
 
 
-class AddGameView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+class GameCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Post
     form_class = Postform
     template_name = 'post/post_new.html'

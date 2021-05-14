@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'general_post',
     # 3rd party
     'allauth',
-    'allauth.account',
+    'allauth.account',''
     'allauth.socialaccount',
     'crispy_forms',
     # local
