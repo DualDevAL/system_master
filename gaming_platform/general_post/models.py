@@ -158,9 +158,7 @@ class Post(models.Model):
     STATUS = (
         ('disponivel', 'Disponivel'),
         ('indisponivel', 'Indisponivel')
-
     )       
-
 
     title = models.CharField(max_length=200, verbose_name='Título do jogo',  null=True)
     slug = models.SlugField(max_length=200, null=True)
@@ -172,19 +170,21 @@ class Post(models.Model):
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     
     published = models.DateTimeField(default=now, null=True, verbose_name='Publicado' ,blank=True)
-    publisher = models.ManyToManyField(Publisher, related_name="get_posts", verbose_name='Editora', blank=True, null=True)
+    publisher = models.ForeignKey('Publisher', on_delete=models.CASCADE, verbose_name='Editora')
     Operational_System = models.ManyToManyField(Operational_System, related_name="get_posts", verbose_name='Sistema Operacional', blank=True, null=True)
     servant = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+
     Changed = models.DateTimeField(auto_now=True, blank=True, null=True)
     Select_Language = models.ManyToManyField(Select_Language, related_name="get_posts", verbose_name='Linguagens', blank=True, null=True)
     value = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Valor', null=True)
+
     age_range = models.ManyToManyField(Age_Range, related_name="get_posts", verbose_name='Faixa Etária', blank=True, null=True)
-    graphics_engine =  models.ManyToManyField(Graphics_Engine, related_name="get_posts", verbose_name='Motor Gráfico', blank=True, null=True)
+    graphics_engine =  models.ForeignKey('Graphics_Engine', on_delete=models.CASCADE, verbose_name='Motor Gráfico', blank=True, null=True)
     designer = models.ManyToManyField(Designer, related_name="get_posts", verbose_name='Projetista', blank=True, null=True)
-    player = models.ManyToManyField(Player, related_name="get_posts", verbose_name='Número de Jogadores', blank=True, null=True)
-    minimum_requirements = models.ManyToManyField(MinimumRequirements, related_name="get_posts", verbose_name='Requisitos Minimos', blank=True, null=True)
+
+    player = models.ForeignKey('Player', on_delete=models.CASCADE, verbose_name='Número de Jogadores', blank=True, null=True)
+    minimum_requirements = models.ForeignKey('MinimumRequirements', on_delete=models.CASCADE, verbose_name='Requisitos Minimos', blank=True, null=True)
     recommended_requirements = models.ManyToManyField(RecommendedRequirements, related_name="get_posts", verbose_name='Requisitos Recomendados', blank=True, null=True)
-   
 
     def get_absolute_url_update(self):
             return reverse("post_new", args=[self.slug])
