@@ -6,7 +6,11 @@ venv
 *.jpeg
 *.pyc
 .DS_Store/
+<<<<<<< HEAD
 *.VScode
+=======
+.VScode/
+>>>>>>> 7f6eaf20e42ab0f754830aa2392b521319bc3146
 staticfiles/
 *__pycache__/
 migrations/
