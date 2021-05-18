@@ -101,7 +101,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'gaming_plataform',
+        'NAME': 'gaming_platform',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

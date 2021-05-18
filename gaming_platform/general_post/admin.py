@@ -12,7 +12,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Select_Language)
-class Select_Language(admin.ModelAdmin):
+class SelectLanguageAdmin(admin.ModelAdmin):
     list_display = ('name', 'create', 'published')
     list_filter = ('name', 'create', 'published')
     date_hierarchy = 'published'
@@ -20,7 +20,7 @@ class Select_Language(admin.ModelAdmin):
 
 
 @admin.register(RecommendedRequirements)
-class Select_Language(admin.ModelAdmin):
+class RecommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'create', 'published')
     list_filter = ('name', 'create', 'published')
     date_hierarchy = 'published'
@@ -29,7 +29,7 @@ class Select_Language(admin.ModelAdmin):
 
 
 @admin.register(MinimumRequirements)
-class Select_Language(admin.ModelAdmin):
+class MinRequirementsAdmin(admin.ModelAdmin):
     list_display = ('name', 'create', 'published')
     list_filter = ('name', 'create', 'published')
     date_hierarchy = 'published'
@@ -37,14 +37,14 @@ class Select_Language(admin.ModelAdmin):
 
 
 @admin.register(Designer)
-class Select_Language(admin.ModelAdmin):
+class DesignAdmin(admin.ModelAdmin):
     list_display = ('name', 'create', 'published')
     list_filter = ('name', 'create', 'published')
     date_hierarchy = 'published'
     search_fields = ('name',)
 
 @admin.register(Player)
-class Select_Language(admin.ModelAdmin):
+class PlayerAdmin(admin.ModelAdmin):
     list_display = ('name', 'create', 'published')
     list_filter = ('name', 'create', 'published')
     date_hierarchy = 'published'
@@ -52,14 +52,14 @@ class Select_Language(admin.ModelAdmin):
 
 
 @admin.register(Age_Range)
-class age_range(admin.ModelAdmin):
+class AgeRangeAdmin(admin.ModelAdmin):
     list_display = ('age', 'create', 'published')
     list_filter = ('age', 'create', 'published')
     date_hierarchy = 'published'
     search_fields = ('age',)
 
 @admin.register(Graphics_Engine)
-class graphics_engine(admin.ModelAdmin):
+class GraphicsAdmin(admin.ModelAdmin):
     list_display = ('name', 'create', 'published')
     list_filter = ('name', 'create', 'published')
     date_hierarchy = 'published'
@@ -67,7 +67,7 @@ class graphics_engine(admin.ModelAdmin):
 
 
 @admin.register(Operational_System)
-class Operational_System(admin.ModelAdmin):
+class OperationalSystemAdmin(admin.ModelAdmin):
     list_display = ('name', 'create', 'published')
     list_filter = ('name', 'create', 'published')
     date_hierarchy = 'published'
@@ -75,7 +75,7 @@ class Operational_System(admin.ModelAdmin):
 
 
 @admin.register(Publisher)
-class publisherAdmin(admin.ModelAdmin):
+class PublisherAdmin(admin.ModelAdmin):
     list_display = ('name', 'create', 'published')
     list_filter = ('name', 'create', 'published')
     date_hierarchy = 'published'
