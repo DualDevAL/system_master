@@ -25,12 +25,12 @@ class GameCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'post/post_new.html'
 
     def get_success_url(self):
-        messages.success(self.request, 'Cliente da venda atualizada com sucesso!')
+        messages.success(self.request, 'Jogo adicionado com sucesso!')
         return reverse_lazy('home')
 
-
-
-
+class GameDetaiView(DetailView):
+    model = Post
+    template_name = 'post/post_detail.html'
         
         
         

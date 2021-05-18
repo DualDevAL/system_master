@@ -5,8 +5,9 @@ venv
 *.jfif
 *.jpeg
 *.pyc
-*.DS_Store
-*.VScode
+.DS_Store/
+.VScode/
 staticfiles/
 *__pycache__/
 migrations/
+

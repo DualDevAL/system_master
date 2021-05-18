@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Jogo {% endblock title %}
+
+
+{% block header %}
+    <header class="masthead">  
+
+        <div class="container-fluid my-4">
+            <a href="#" ><img class="card-img-top"  src="/media/{{ object.image }}" height="320" alt="background" ></a>
+        </div>
+
+        <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                    
+                        <div class="site-heading">
+                    
+                            <h2>{{ object.title }}</h2>
+
+                        </div>
+                        
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+    <!--Aqui {{ object.NomeDaVariavel }}-->
+    <p>{{ object.description }}</p>
+    <!--{% if user.is_authenticated %}
+    <div class="card ">
+
+        <div class="card-body ">
+            <a href="{{object.get_absolute_url_update}}" class="btn btn btn-success">+ Editar postagem do blog </a>
+            <a href="{{object.get_absolute_url_delete}}" class="btn btn-danger"> - Deletar postagem do blog</a>
+        </div>
+
+    </div>
+    {% endif %}-->
+{% endblock content %}
