@@ -49,18 +49,19 @@
         <li> <strong> Requisitos Recomendados: </strong> {{ object.recommended_requirements }} </li>
         <li> <strong> Preço: </strong> {{ object.value }} </li>
         </ul>
-    </div
-    
-    <!--{{ object.description }}-->
-    <!--{% if user.is_authenticated %}
+    </div>
+    <!--
+    {{ object.description }}
+    {% if user.is_authenticated %}
     <div class="card ">
 
         <div class="card-body ">
-            <a href="{{object.get_absolute_url_update}}" class="btn btn btn-success">+ Editar postagem do blog </a>
-            <a href="{{object.get_absolute_url_delete}}" class="btn btn-danger"> - Deletar postagem do blog</a>
+            <a href="{{object.get_absolute_url_update}}" class="btn btn btn-success">+ Editar Game </a>
+            <a href="{{object.get_absolute_url_delete}}" class="btn btn-danger"> - Deletar Game da lista</a>
         </div>
 
     </div>
+
     {% endif %}-->
     
 {% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} GameStation - Play Inicio - Delete {% endblock title %}
+{% block content %}
+<div class="container-fluid text-center">
+    <form action="" method="post">{% csrf_token %}
+
+        <h3>Deletar Game</h3>
+
+        <p>Você tem certeza que deseja excluir o jogo </p>
+        <p>"{{post.title}}" da plataforma? </p>
+
+        <input type="submit" value="Confirmar" class="btn btn btn-danger col-lg-4">
+        <a href="{{object.get_absolute_url2}}" class="btn btn btn-success col-lg-4">Cancelar</a>
+
+    </form>
+</div>
+{% endblock content %}
