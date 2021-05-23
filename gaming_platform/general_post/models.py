@@ -189,12 +189,19 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post_detail', args=[self.slug])
 
+    def get_absolute_url2(self):
+        return reverse('home', )
+
+    def get_absolute_url_delete(self):
+        return reverse('post_delete', args=[self.pk])
+
     class Meta:
         verbose_name = "Adicionar Jogo"
         verbose_name_plural = "Adicionar Jogos"
 
     def __str__(self):
         return str(self.title).capitalize()
+
 
 @receiver(post_save, sender=Post)
 def insert_slug(sender, instance, **kwargs):# def para gerar o slug automatico para não dá erro

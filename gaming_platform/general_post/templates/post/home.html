@@ -3,40 +3,59 @@
 {% block title %} PLATAFORMA DE JOGOS {% endblock title %}
 
 {% block content %}
-    <div>
 
-        <div class="row">
-          {% for post in object_list %}
-            <div class="col-lg-4 col-md-6 mb-4">
+    <div class="container-fluid ">
+        {% if object_list %}
 
-                <div id="r-imagem" class="card h-100">
-                  <a href="#" ><img class="card-img-top"  src="/media/{{ post.image }}" height="320" alt="background" ></a>
-                <div class="card-body">
+          <div class="row">
 
-                    <h4 class="card-title">
-                    <a href="{{ post.get_absolute_url }}">
-                        <h2 class="post-title text-dark"> 
-                            {{ post.title }}
-                        </h2>
-                    </a>
-                    </h4>
-                    <h5>R$:{{ post.value }}</h5>
-                    <p class="card-text">{{ post.description|safe|truncatechars:'200' }}</p>
-                </div>
-                
-                <div class="card-footer">
-                    <small class="text-muted ">status: {{post.status}} </small>
-                </div>
-                </div>
-            </div>
-          {% endfor %}
-       
-        </div>
+            {% for post in object_list %}
+              
+              <div class="col-lg-4 col-md-6 mb-4">
 
+                  <div id="r-imagem" class="card h-100">
+                    <a href="{{ post.get_absolute_url }}" ><img class="card-img-top"  src="/media/{{ post.image }}" height="320" alt="background" ></a>
+                  <div class="card-body">
+
+                      <h4 class="card-title">
+                        <a href="{{ post.get_absolute_url }}" style="text-decoration: none;">
+                            <h2 class="post-title text-dark"> 
+                                {{ post.title }}
+                            </h2>
+                        </a>
+                      </h4>
+                      
+                      <h5 class="text-success">R$:{{ post.value }}</h5>
+
+                      <a class="text-dark" href="{{ post.get_absolute_url }}"  style="text-decoration: none;" >
+                        <p class="card-text text-center">{{ post.description|safe|truncatechars:'200' }}</p>
+                      </a>
+
+                    </div>
+                  
+                  <div class="card-footer">
+                      <small class="text-muted ">status: {{post.status}} </small>
+                  </div>
+                  </div>
+              </div>
+    
+            {% endfor %}
+          </div>
+
+        {% else %}
+
+          <div class="conteiner-fluid text-center">
+
+            <h1 class="h2 text-secondary ">Nenhum JOGO no momento volte mais tarde</h1>
+            <a href="#" ><img class="img-top  img-rouder"  src="{% static 'img/ops.jpg' %}" height="320" alt="background" ></a>
+          
+          </div>
+
+          {% endif %}
       </div>
 
     </div>
 
-
   </div>
+
 {% endblock content %}
