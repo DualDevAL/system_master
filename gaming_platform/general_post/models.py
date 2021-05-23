@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
-#from django.db.models.signals import post_save
-#from django.utils.text import slugify
+from django.db.models.signals import post_save
+from django.utils.text import slugify
 from django.urls import reverse
 from ckeditor.fields import RichTextField
+from django.dispatch import receiver
 #from django.utils.html import mark_safe
 # Create your models here.
 
@@ -110,7 +111,7 @@ class Select_Language(models.Model):
 
 
 class MinimumRequirements(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.TextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     published = models.DateTimeField(default=now)
     create = models.DateTimeField(auto_now_add=True)
 
@@ -123,9 +124,8 @@ class MinimumRequirements(models.Model):
         return self.name
 
 
-
 class RecommendedRequirements(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.TextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     published = models.DateTimeField(default=now)
     create = models.DateTimeField(auto_now_add=True)
 
@@ -146,7 +146,7 @@ class Player(models.Model):
 
     class Meta:
         verbose_name = "Número de Jogadores"
-        verbose_name_plural = "Adicionar Linguagem"
+        verbose_name_plural = "Número de Jogadores"
         ordering = ["-create"]
 
     def __str__(self):
@@ -158,36 +158,38 @@ class Post(models.Model):
     STATUS = (
         ('disponivel', 'Disponivel'),
         ('indisponivel', 'Indisponivel')
-
     )       
-
 
     title = models.CharField(max_length=200, verbose_name='Título do jogo',  null=True)
     slug = models.SlugField(max_length=200, null=True)
     author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
 
-    genre = models.ManyToManyField(GameCategory, related_name="get_posts", verbose_name='Gênero', blank=True, null=True)
-    image = models.ImageField(upload_to='general_post', blank=True, null=True, verbose_name='Imagem')
+    genre = models.ForeignKey('GameCategory', on_delete=models.CASCADE, verbose_name='Gênero', blank=True, null=True)
+    image = models.ImageField(upload_to='general_post', blank=False, null=True, verbose_name='Imagem')
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     
     published = models.DateTimeField(default=now, null=True, verbose_name='Publicado' ,blank=True)
-    publisher = models.ManyToManyField(Publisher, related_name="get_posts", verbose_name='Editora', blank=True, null=True)
-    Operational_System = models.ManyToManyField(Operational_System, related_name="get_posts", verbose_name='Sistema Operacional', blank=True, null=True)
+
+    publisher = models.ForeignKey('Publisher', on_delete=models.CASCADE, verbose_name='Editora', blank=True, null=True)
+
+    Operational_System = models.ForeignKey('Operational_System', on_delete=models.CASCADE, verbose_name='Sistema Operacional', blank=True, null=True)
     servant = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+
     Changed = models.DateTimeField(auto_now=True, blank=True, null=True)
     Select_Language = models.ManyToManyField(Select_Language, related_name="get_posts", verbose_name='Linguagens', blank=True, null=True)
     value = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Valor', null=True)
-    age_range = models.ManyToManyField(Age_Range, related_name="get_posts", verbose_name='Faixa Etária', blank=True, null=True)
+
+    age_range = models.ForeignKey('Age_Range', on_delete=models.CASCADE, verbose_name='Faixa Etária', blank=True, null=True)
     graphics_engine =  models.ManyToManyField(Graphics_Engine, related_name="get_posts", verbose_name='Motor Gráfico', blank=True, null=True)
     designer = models.ManyToManyField(Designer, related_name="get_posts", verbose_name='Projetista', blank=True, null=True)
-    player = models.ManyToManyField(Player, related_name="get_posts", verbose_name='Número de Jogadores', blank=True, null=True)
-    minimum_requirements = models.ManyToManyField(MinimumRequirements, related_name="get_posts", verbose_name='Requisitos Minimos', blank=True, null=True)
-    recommended_requirements = models.ManyToManyField(RecommendedRequirements, related_name="get_posts", verbose_name='Requisitos Recomendados', blank=True, null=True)
-   
+    player = models.ForeignKey('Player', on_delete=models.CASCADE, verbose_name='Número de Jogadores', blank=True, null=True)
+    minimum_requirements = models.ForeignKey('MinimumRequirements', on_delete=models.CASCADE, verbose_name='Requisitos Minimos', blank=True, null=True)
+    recommended_requirements = models.ForeignKey('RecommendedRequirements', on_delete=models.CASCADE, verbose_name='Requisitos Recomendados', blank=True, null=True)
 
-    def get_absolute_url_update(self):
-            return reverse("post_new", args=[self.slug])
+    def get_absolute_url(self):
+        return reverse('post_detail', args=[self.slug])
+
     class Meta:
         verbose_name = "Adicionar Jogo"
         verbose_name_plural = "Adicionar Jogos"
@@ -195,3 +197,10 @@ class Post(models.Model):
     def __str__(self):
         return str(self.title).capitalize()
 
+@receiver(post_save, sender=Post)
+def insert_slug(sender, instance, **kwargs):# def para gerar o slug automatico para não dá erro
+    if kwargs.get('created', False):
+        print('Criando slug')
+    if not instance.slug:
+        instance.slug = slugify(instance.title)
+        return instance.save()

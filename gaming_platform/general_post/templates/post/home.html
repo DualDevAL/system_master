@@ -9,23 +9,23 @@
           {% for post in object_list %}
             <div class="col-lg-4 col-md-6 mb-4" >
 
-                <div id="r-imagem" class="card h-100">
-                  <a href="#"><img class="card-img-top"  src="/media/{{ post.image }}" height="320" alt="background" ></a>
+                <div id="r-imagem" class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);
+                  <a href="#" ><img class="card-img-top"  src="/media/{{ post.image }}" height="320" alt="background" ></a>
                 <div class="card-body">
 
                     <h4 class="card-title">
-                    <a href="{{post.get_absulute_url}}">
+                    <a href="{{ post.get_absolute_url }}">
                         <h2 class="post-title text-dark"> 
-                            {{ post.title }}
+                            <p> {{ post.title }} </p>
                         </h2>
                     </a>
                     </h4>
-                    <h5>R$:{{ post.value }}</h5>
+                    <h5>R$ {{ post.value }}</h5>
                     <p class="card-text">{{ post.description|safe|truncatechars:'200' }}</p>
                 </div>
                 
                 <div class="card-footer">
-                    <small class="text-muted ">status: {{post.status}} </small>
+                    <small class="text-muted "><p>status: {{post.status}}</p> </small>
                 </div>
                 </div>
             </div>

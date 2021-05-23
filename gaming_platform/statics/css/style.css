@@ -8,3 +8,41 @@ img{
     max-height: 100%;
 
 }
+
+span {
+    color: white;
+}
+
+body {
+    background: url('image/background7.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*background-size:contain; */
+    background-position:center;
+
+}
+
+p {
+    color: white;
+}
+
+h5 {
+    color: white;
+}
+
+li {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+
+nav a:hover {
+    color: rgb(60, 95, 250) !important;
+}
+
+nav a{
+    color: white !important; 
+}

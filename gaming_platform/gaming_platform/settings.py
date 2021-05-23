@@ -101,7 +101,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'gaming_plataform',
+        'NAME': 'gaming_platform',
         'USER': 'postgres',
         'PASSWORD': 'Doug327688*',
         'HOST': 'localhost',
@@ -157,7 +157,7 @@ MEDIA_ROOT = 'media'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    'statics'
+    'statics',
 ]
 
 STATIC_URL = '/static/'

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Jogo {% endblock title %}
+
+
+{% block header %}
+    <header class="masthead">  
+
+        <div class="container-fluid my-4">
+            <div class="text-center"
+            <a href="#" ><img class=""  src="/media/{{ object.image }}" height="320" alt="background"></a>
+            </div
+        </div>
+
+        <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                    
+                        <div class="site-heading">
+                    
+                            <h2 class="text-center">{{ object.title }}</h2>
+                        
+                        </div>
+                        
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+    <!--Aqui {{ object.NomeDaVariavel }}-->
+    <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.5)"";
+        <p class="">{{ object.description|safe|truncatechars:'300' }}</p>
+        
+        <ul>
+        <li> <strong>Gênero:</strong> {{ object.genre }}</li>
+        <li> {{ object.player }} </li>
+        <li> <strong>Faixa Etária:</strong> {{ object.age_range }} </li>
+        <li> {{ object.Operational_System }} </li>
+        <li> <strong>Requisitos Mínimos: </strong> {{ object.minimum_requirements }} </li>
+        <li> <strong> Requisitos Recomendados: </strong> {{ object.recommended_requirements }} </li>
+        <li> <strong> Preço: </strong> {{ object.value }} </li>
+        </ul>
+    </div
+    
+    <!--{{ object.description }}-->
+    <!--{% if user.is_authenticated %}
+    <div class="card ">
+
+        <div class="card-body ">
+            <a href="{{object.get_absolute_url_update}}" class="btn btn btn-success">+ Editar postagem do blog </a>
+            <a href="{{object.get_absolute_url_delete}}" class="btn btn-danger"> - Deletar postagem do blog</a>
+        </div>
+
+    </div>
+    {% endif %}-->
+    
+{% endblock content %}
