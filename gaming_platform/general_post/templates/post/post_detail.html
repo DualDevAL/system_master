@@ -7,7 +7,9 @@
     <header class="masthead">  
 
         <div class="container-fluid my-4">
-            <a href="#" ><img class="card-img-top"  src="/media/{{ object.image }}" height="320" alt="background" ></a>
+            <div class="text-center"
+            <a href="#" ><img class=""  src="/media/{{ object.image }}" height="320" alt="background"></a>
+            </div
         </div>
 
         <div class="overlay"></div>
@@ -18,8 +20,8 @@
                     
                         <div class="site-heading">
                     
-                            <h2>{{ object.title }}</h2>
-
+                            <h2 class="text-center">{{ object.title }}</h2>
+                        
                         </div>
                         
                     </div>
@@ -35,7 +37,21 @@
 {% block content %}
 
     <!--Aqui {{ object.NomeDaVariavel }}-->
-    <p>{{ object.description }}</p>
+    <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.5)"";
+        <p class="">{{ object.description|safe|truncatechars:'300' }}</p>
+        
+        <ul>
+        <li> <strong>Gênero:</strong> {{ object.genre }}</li>
+        <li> {{ object.player }} </li>
+        <li> <strong>Faixa Etária:</strong> {{ object.age_range }} </li>
+        <li> {{ object.Operational_System }} </li>
+        <li> <strong>Requisitos Mínimos: </strong> {{ object.minimum_requirements }} </li>
+        <li> <strong> Requisitos Recomendados: </strong> {{ object.recommended_requirements }} </li>
+        <li> <strong> Preço: </strong> {{ object.value }} </li>
+        </ul>
+    </div
+    
+    <!--{{ object.description }}-->
     <!--{% if user.is_authenticated %}
     <div class="card ">
 
@@ -46,4 +62,5 @@
 
     </div>
     {% endif %}-->
+    
 {% endblock content %}

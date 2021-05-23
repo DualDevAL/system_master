@@ -173,7 +173,7 @@ class Post(models.Model):
 
     publisher = models.ForeignKey('Publisher', on_delete=models.CASCADE, verbose_name='Editora', blank=True, null=True)
 
-    Operational_System = models.ManyToManyField(Operational_System, related_name="get_posts", verbose_name='Sistema Operacional', blank=True, null=True)
+    Operational_System = models.ForeignKey('Operational_System', on_delete=models.CASCADE, verbose_name='Sistema Operacional', blank=True, null=True)
     servant = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     Changed = models.DateTimeField(auto_now=True, blank=True, null=True)
@@ -184,9 +184,8 @@ class Post(models.Model):
     graphics_engine =  models.ManyToManyField(Graphics_Engine, related_name="get_posts", verbose_name='Motor Gráfico', blank=True, null=True)
     designer = models.ManyToManyField(Designer, related_name="get_posts", verbose_name='Projetista', blank=True, null=True)
     player = models.ForeignKey('Player', on_delete=models.CASCADE, verbose_name='Número de Jogadores', blank=True, null=True)
-    minimum_requirements = models.ManyToManyField(MinimumRequirements, related_name="get_posts", verbose_name='Requisitos Minimos', blank=True, null=True)
-
-    recommended_requirements = models.ManyToManyField(RecommendedRequirements, related_name="get_posts", verbose_name='Requisitos Recomendados', blank=True, null=True)
+    minimum_requirements = models.ForeignKey('MinimumRequirements', on_delete=models.CASCADE, verbose_name='Requisitos Minimos', blank=True, null=True)
+    recommended_requirements = models.ForeignKey('RecommendedRequirements', on_delete=models.CASCADE, verbose_name='Requisitos Recomendados', blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[self.slug])
