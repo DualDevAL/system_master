@@ -37,7 +37,11 @@
 {% block content %}
 
     <!--Aqui {{ object.NomeDaVariavel }}-->
+<<<<<<< HEAD
     <div class="container" style="background-color: rgba(0, 0, 0, 0.5)"";
+=======
+    <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5)";>
+>>>>>>> 4c686b06ed4b02168639a843602cf214c7616e30
         <p class="">{{ object.description|safe|truncatechars:'300' }}</p>
         
         <ul>
@@ -50,17 +54,23 @@
             <li> <strong> Preço: </strong> {{ object.value }} </li>
         </ul>
     </div>
+<<<<<<< HEAD
     
     <!--{{ object.description }}-->
     <!--{% if user.is_authenticated %}
+=======
+
+    {% if user.is_authenticated %}
+>>>>>>> 4c686b06ed4b02168639a843602cf214c7616e30
     <div class="card ">
 
         <div class="card-body ">
-            <a href="{{object.get_absolute_url_update}}" class="btn btn btn-success">+ Editar postagem do blog </a>
-            <a href="{{object.get_absolute_url_delete}}" class="btn btn-danger"> - Deletar postagem do blog</a>
+            <a href="{{object.get_absolute_url_update}}" class="btn btn btn-success">+ Editar Game </a>
+            <a href="{{object.get_absolute_url_delete}}" class="btn btn-danger"> - Deletar Game da lista</a>
         </div>
 
     </div>
-    {% endif %}-->
+
+    {% endif %}
     
 {% endblock content %}

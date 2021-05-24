@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} PLATAFORMA DE JOGOS {% endblock title %}
+
+{% block content %}
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+                    
+                    <div class="card-body">
+
+                        <a href="{% url 'home_category' %}" style="text-decoration: none;">
+                            <h1 class="text-center">GÊNERO</h1>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+
+                    <div class="card-body">
+
+                        <a href="{% url 'home_system' %}" style="text-decoration: none;">
+                            <h1 class="text-center">SISTEMA OPERACIONAL</h1>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+
+                    <div class="card-body">
+
+                        <a href="{% url 'home_age' %}" style="text-decoration: none;">
+                            <h1 class="text-center">FAIXA ETARIA</h1>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+
+                    <div class="card-body">
+
+                        <a href="{% url 'home_publisher' %}" style="text-decoration: none;">
+                            <h1 class="text-center">EDITORAS</h1>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+
+                    <div class="card-body">
+
+                        <a href="{% url 'home_engine' %}" style="text-decoration: none;">
+                            <h1 class="text-center">MOTORES GRÁFICOS</h1>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+    </div>
+    
+{% endblock content %}

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} PLATAFORMA DE JOGOS {% endblock title %}
+
+{% block content %}
+
+    <div class="container-fluid ">
+        {% if object_list %}
+
+          <div class="row">
+
+            {% for post in object_list %}
+              
+              <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card h-100 text-center" style="background-color: rgba(0, 0, 0, 0.5);">
+
+                  <h4 class="card-title text-white">{{ post.name }}</h4>
+
+                  <div class="card-body">
+                    <p>{{ post.description }}</p>
+                  </div>
+
+                  <div class="card-footer">
+                    <p> {{ post.status }}</p>
+                  </div>
+
+                </div>
+
+              </div>
+                
+            {% endfor %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+              <div class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+    
+                  <div class="card-body">
+    
+                      <a href="{% url 'publisher_new' %}" style="text-decoration: none;">
+                          <h1 class="text-center">ADICIONAR EDITORA</h1>
+                      </a>
+    
+                  </div>
+    
+              </div>
+
+          </div>
+
+        {% else %}
+
+          <div class="conteiner-fluid text-center">
+
+            <h1 class="h2 text-secondary ">Nenhum EDITORA no momento</h1>
+            <a href="#" ><img class="img-top  img-rouder"  src="{% static 'img/ops.jpg' %}" height="320" alt="background" ></a>
+            
+            <div class="col-lg-12 col-md-12 mb-12">
+
+              <div class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+    
+                  <div class="card-body">
+    
+                      <a href="{% url 'publisher_new' %}" style="text-decoration: none;">
+                          <h1 class="text-center">ADICIONAR EDITORA</h1>
+                      </a>
+    
+                  </div>
+    
+              </div>
+
+            </div>
+
+        </div>
+          
+        {% endif %}
+
+        
+
+      </div>
+
+      </div>
+
+{% endblock content %}
