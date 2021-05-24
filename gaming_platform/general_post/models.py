@@ -82,9 +82,18 @@ class Graphics_Engine(models.Model):
 
 
 class Designer(models.Model):
-    name = models.CharField(max_length=100)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponível', 'Disponível'),
+        ('indisponível', 'Indisponível')
+    )
+
+    name = models.CharField(max_length=100, verbose_name='Designer')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
     class Meta:
         verbose_name = "designer"
@@ -96,9 +105,18 @@ class Designer(models.Model):
 
 
 class Select_Language(models.Model):
-    name = models.CharField(max_length=100)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponível', 'Disponível'),
+        ('indisponível', 'Indisponível')
+    )
+
+    name = models.CharField(max_length=100, verbose_name='Idioma')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
     class Meta:
         verbose_name = "Adicionar Linguagem"
@@ -111,9 +129,18 @@ class Select_Language(models.Model):
 
 
 class MinimumRequirements(models.Model):
-    name = models.TextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponível', 'Disponível'),
+        ('indisponível', 'Indisponível')
+    )
+
+    name = models.CharField(max_length=100, verbose_name='Requisitos Minimos')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
     class Meta:
         verbose_name = "Requisitos Minimos"
@@ -125,9 +152,18 @@ class MinimumRequirements(models.Model):
 
 
 class RecommendedRequirements(models.Model):
-    name = models.TextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponível', 'Disponível'),
+        ('indisponível', 'Indisponível')
+    )
+
+    name = models.CharField(max_length=100, verbose_name='Requisitos Recomendados')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
     class Meta:
         verbose_name = "Requisitos Recomendados"
@@ -140,9 +176,18 @@ class RecommendedRequirements(models.Model):
 
 
 class Player(models.Model):
-    name = models.CharField(max_length=100)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponível', 'Disponível'),
+        ('indisponível', 'Indisponível')
+    )
+
+    name = models.CharField(max_length=100, verbose_name='Número de Jogadores')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
     class Meta:
         verbose_name = "Número de Jogadores"

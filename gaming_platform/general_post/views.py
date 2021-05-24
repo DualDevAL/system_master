@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
-from .models import Post
+from .models import Designer, Post
 from django.contrib.auth.decorators import login_required
 #--------------------------------------------------------------------------
 from django.contrib.messages.views import SuccessMessageMixin
@@ -12,6 +12,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import HttpResponsePermanentRedirect
 from django.urls import reverse
+
 
 
 class PostListView(ListView):
@@ -32,5 +33,12 @@ class GameDetaiView(DetailView):
     model = Post
     template_name = 'post/post_detail.html'
         
+
+
+# ----------------
+         
         
-        
+
+
+
+
