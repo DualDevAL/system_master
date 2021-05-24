@@ -11,9 +11,18 @@ from django.dispatch import receiver
 
 
 class GameCategory(models.Model):
-    name = models.CharField(max_length=100)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponivel', 'Disponivel'),
+        ('indisponivel', 'Indisponivel')
+    ) 
+
+    name = models.CharField(max_length=100, verbose_name='Categoria')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
 
     class Meta:
         verbose_name = "Adicionar Gênero"
@@ -25,9 +34,18 @@ class GameCategory(models.Model):
 
 
 class Publisher(models.Model):
-    name = models.CharField(max_length=100)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponivel', 'Disponivel'),
+        ('indisponivel', 'Indisponivel')
+    ) 
+
+    name = models.CharField(max_length=100, verbose_name='Editora')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
 
     class Meta:
         verbose_name = "Adicionar Editora"
@@ -39,9 +57,18 @@ class Publisher(models.Model):
 
 
 class Age_Range(models.Model):
-    age = models.CharField(max_length=100)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponivel', 'Disponivel'),
+        ('indisponivel', 'Indisponivel')
+    ) 
+
+    age = models.CharField(max_length=100, verbose_name='Idade')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
 
     class Meta:
         verbose_name = "Faixa Etária"
@@ -53,9 +80,18 @@ class Age_Range(models.Model):
 
 
 class Operational_System(models.Model):
-    name = models.CharField(max_length=100)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponivel', 'Disponivel'),
+        ('indisponivel', 'Indisponivel')
+    ) 
+
+    name = models.CharField(max_length=100, verbose_name='Sistema operacional')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
 
     class Meta:
         verbose_name = "Adicionar Sistema Operacional"
@@ -66,11 +102,19 @@ class Operational_System(models.Model):
         return self.name
 
 
-
 class Graphics_Engine(models.Model):
-    name = models.CharField(max_length=100)
-    published = models.DateTimeField(default=now)
+    STATUS = (
+        ('disponivel', 'Disponivel'),
+        ('indisponivel', 'Indisponivel')
+    ) 
+
+    name = models.CharField(max_length=100, verbose_name='motor gráfico')
+    published = models.DateTimeField(default=now, verbose_name='Publicado')
     create = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, null=True)
+    author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
+    status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
+    description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
 
     class Meta:
         verbose_name = "Motor Gráfico"
@@ -160,17 +204,16 @@ class Post(models.Model):
         ('indisponivel', 'Indisponivel')
     )       
 
-    title = models.CharField(max_length=200, verbose_name='Título do jogo',  null=True)
+    title = models.CharField(max_length=200, verbose_name='Título do jogo',  null=False, blank=False)
     slug = models.SlugField(max_length=200, null=True)
     author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
 
-    genre = models.ForeignKey('GameCategory', on_delete=models.CASCADE, verbose_name='Gênero', blank=True, null=True)
+    genre = models.ForeignKey('GameCategory', on_delete=models.CASCADE,default=GameCategory ,verbose_name='Gênero', blank=True, null=True)
     image = models.ImageField(upload_to='general_post', blank=False, null=True, verbose_name='Imagem')
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     
     published = models.DateTimeField(default=now, null=True, verbose_name='Publicado' ,blank=True)
-
     publisher = models.ForeignKey('Publisher', on_delete=models.CASCADE, verbose_name='Editora', blank=True, null=True)
 
     Operational_System = models.ForeignKey('Operational_System', on_delete=models.CASCADE, verbose_name='Sistema Operacional', blank=True, null=True)
@@ -192,6 +235,9 @@ class Post(models.Model):
 
     def get_absolute_url2(self):
         return reverse('home', )
+        
+    def get_absolute_url_update(self):
+        return reverse('post_edit', args=[self.slug])
 
     def get_absolute_url_delete(self):
         return reverse('post_delete', args=[self.pk])

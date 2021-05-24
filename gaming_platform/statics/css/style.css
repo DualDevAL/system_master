@@ -46,3 +46,7 @@ nav a:hover {
 nav a{
     color: white !important; 
 }
+
+div a:hover {
+    color: rgb(251, 251, 253) !important;
+}

@@ -37,7 +37,7 @@
 {% block content %}
 
     <!--Aqui {{ object.NomeDaVariavel }}-->
-    <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.5)"";
+    <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.5)";>
         <p class="">{{ object.description|safe|truncatechars:'300' }}</p>
         
         <ul>
@@ -50,8 +50,7 @@
         <li> <strong> Preço: </strong> {{ object.value }} </li>
         </ul>
     </div>
-    <!--
-    {{ object.description }}
+
     {% if user.is_authenticated %}
     <div class="card ">
 
@@ -62,6 +61,6 @@
 
     </div>
 
-    {% endif %}-->
+    {% endif %}
     
 {% endblock content %}

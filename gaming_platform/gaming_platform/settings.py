@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     #-----------------
-    #'bootstrapform',
+    'bootstrapform',
     'ckeditor',
     'general_post',
     # 3rd party
@@ -103,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gaming_platform',
         'USER': 'postgres',
-        'PASSWORD': 'Doug327688*',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
     }

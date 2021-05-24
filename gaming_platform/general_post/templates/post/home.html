@@ -15,28 +15,29 @@
 
                   <div class="card h-100" style="background-color: rgba(0, 0, 0, 0.5);">
                     <a href="{{ post.get_absolute_url }}" ><img class="card-img-top"  src="/media/{{ post.image }}" height="320" alt="background" ></a>
-                  <div class="card-body">
+                    <div class="card-body">
 
-                      <h4 class="card-title">
-                        <a href="{{ post.get_absolute_url }}" style="text-decoration: none;">
-                            <h2 class="post-title text-dark"> 
-                                {{ post.title }}
-                            </h2>
+                        <h4 class="card-title">
+                          <a href="{{ post.get_absolute_url }}" style="text-decoration: none;">
+                              <h2 class="post-title text-dark"> 
+                                  {{ post.title }}
+                              </h2>
+                          </a>
+                        </h4>
+                        
+                        <h5 class="text-success">R$:{{ post.value }}</h5>
+
+                        <a class="text-dark" href="{{ post.get_absolute_url }}"  style="text-decoration: none;" >
+                          <p class="card-text text-center">{{ post.description|safe|truncatechars:'200' }}</p>
                         </a>
-                      </h4>
-                      
-                      <h5 class="text-success">R$:{{ post.value }}</h5>
 
-                      <a class="text-dark" href="{{ post.get_absolute_url }}"  style="text-decoration: none;" >
-                        <p class="card-text text-center">{{ post.description|safe|truncatechars:'200' }}</p>
-                      </a>
-
+                      </div>
+                    
+                    <div class="card-footer">
+                        <small class="text-muted ">status: {{post.status}} </small>
                     </div>
-                  
-                  <div class="card-footer">
-                      <small class="text-muted ">status: {{post.status}} </small>
                   </div>
-                  </div>
+
               </div>
     
             {% endfor %}
