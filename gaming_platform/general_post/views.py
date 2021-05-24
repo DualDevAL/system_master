@@ -48,13 +48,13 @@ class GameDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         return super(GameDeleteView, self).delete(request, *args, **kwargs)
 
 
-class GameUpdateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+class GameUpdateView(UpdateView):
     model = Post
     form_class = Postform
     template_name = 'post/post_edit.html'
 
     def get_success_url(self):
-        messages.success(self.request, 'Jogo adicionado com sucesso!')
+        messages.success(self.request, 'Jogo Alterado com sucesso!')
         return reverse_lazy('home')
 
 
@@ -79,6 +79,15 @@ class CategoryCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         messages.success(self.request, 'adicionado com sucesso!')
         return reverse_lazy('home_category')
 
+class CategoryUpdateView(UpdateView):
+    model = GameCategory
+    template_name = 'category/category_edit.html'
+    fields = ["name", "description", "status" ]
+
+    def get_success_url(self):
+        messages.success(self.request, 'Alterado com sucesso!')
+        return reverse_lazy('home_category')
+
 # ================= CLASS PUBLISHER ==================================
    
 class PublisherListView(ListView):
@@ -93,6 +102,16 @@ class PublisherCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'adicionado com sucesso!')
+        return reverse_lazy('home_publisher')
+
+
+class PublisherUpdateView(UpdateView):
+    model = Publisher
+    template_name = 'publisher/publisher_edit.html'
+    fields = ["name", "description", "status" ]
+
+    def get_success_url(self):
+        messages.success(self.request, 'Alterado com sucesso!')
         return reverse_lazy('home_publisher')
 
 # ================= CLASS AGERANGE ==================================
@@ -111,6 +130,16 @@ class AgeCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         messages.success(self.request, 'adicionado com sucesso!')
         return reverse_lazy('home_age')
 
+
+class AgeUpdateView(UpdateView):
+    model = Age_Range
+    template_name = 'age/age_edit.html'
+    fields = ["age", "description", "status" ]
+
+    def get_success_url(self):
+        messages.success(self.request, 'Alterado com sucesso!')
+        return reverse_lazy('home_age')
+
 # ================= CLASS OPERATIONA_SYSTEM ==================================
    
 class SystemListView(ListView):
@@ -127,6 +156,16 @@ class SystemCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         messages.success(self.request, 'adicionado com sucesso!')
         return reverse_lazy('home_system')
 
+
+class SystemUpdateView(UpdateView):
+    model = Operational_System
+    template_name = 'system/system_edit.html'
+    fields = ["name", "description", "status" ]
+
+    def get_success_url(self):
+        messages.success(self.request, 'Alterado com sucesso!')
+        return reverse_lazy('home_system')
+
 # ================= CLASS GRAPHICS_ENGINE ==================================
    
 class EngineListView(ListView):
@@ -141,5 +180,15 @@ class EngineCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'adicionado com sucesso!')
+        return reverse_lazy('home_engine')
+
+
+class EngineUpdateView(UpdateView):
+    model = Graphics_Engine
+    template_name = 'engine/engine_edit.html'
+    fields = ["name", "description", "status" ]
+
+    def get_success_url(self):
+        messages.success(self.request, 'Alterado com sucesso!')
         return reverse_lazy('home_engine')
 

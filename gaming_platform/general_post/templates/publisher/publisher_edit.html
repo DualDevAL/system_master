@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %}editar Jogo{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid col-8 my-5">
+        <h2>Edita Informação do JOGO</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            <span> {{ form|bootstrap }} </span>
+            
+            <button class="btn btn-success" type="submit" > Concluir </button>
+
+        </form>
+    </div>
+
+{% endblock %}

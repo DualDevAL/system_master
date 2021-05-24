@@ -52,15 +52,17 @@
     </div>
 
     {% if user.is_authenticated %}
-    <div class="card ">
+    <div class="container-fluid text-center my-4" >
+    
+        <a href="{{object.get_absolute_url_update}}" class="btn btn-success col-lg-4" style="text-decoration: none;">
+            <h6> Editar Game </h6>
+        </a>
 
-        <div class="card-body ">
-            <a href="{{object.get_absolute_url_update}}" class="btn btn btn-success">+ Editar Game </a>
-            <a href="{{object.get_absolute_url_delete}}" class="btn btn-danger"> - Deletar Game da lista</a>
-        </div>
+        <a href="{{object.get_absolute_url_delete}}" class="btn btn-danger col-lg-4" style="text-decoration: none;">
+            <h6> Deletar Game </h6>
+        </a>
 
     </div>
-
     {% endif %}
     
 {% endblock content %}
