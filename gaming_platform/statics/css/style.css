@@ -17,7 +17,7 @@ body {
     background: url('image/background7.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /*background-size:contain; */
+    
     background-position:center;
 
 }
@@ -47,6 +47,31 @@ nav a{
     color: white !important; 
 }
 
-div a:hover {
-    color: rgb(251, 251, 253) !important;
+* {
+    margin: 0;
 }
+html, body {
+    height: 100%;
+}
+.body-content {
+    min-height: 100%;
+    /* igual a altura do rodapé */
+    margin-bottom: -10px; 
+}
+.body-content:after {
+    content: "";
+    display: block;
+}
+.site-footer, .page-wrap:after {
+    height: 30px; 
+}
+.site-footer {
+    border: solid 2px gray;
+}
+
+
+
+/*div a:hover {
+    color: rgb(251, 251, 253) !important;
+}*/
+/*

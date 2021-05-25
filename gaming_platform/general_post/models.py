@@ -24,6 +24,9 @@ class GameCategory(models.Model):
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
 
+    def get_absolute_url_update3(self):
+        return reverse('category_edit', args=[self.pk])
+
     class Meta:
         verbose_name = "Adicionar Gênero"
         verbose_name_plural = "Adicionar Gêneros"
@@ -46,6 +49,9 @@ class Publisher(models.Model):
     author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
+
+    def get_absolute_url_update4(self):
+        return reverse('publisher_edit', args=[self.pk])
 
     class Meta:
         verbose_name = "Adicionar Editora"
@@ -70,6 +76,9 @@ class Age_Range(models.Model):
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
 
+    def get_absolute_url_update2(self):
+        return reverse('age_edit', args=[self.pk])
+
     class Meta:
         verbose_name = "Faixa Etária"
         verbose_name_plural = "Faixa Etária"
@@ -92,6 +101,9 @@ class Operational_System(models.Model):
     author = models.ForeignKey(User, verbose_name='Autor', null=True, on_delete=models.CASCADE)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
+
+    def get_absolute_url_update5(self):
+        return reverse('system_edit', args=[self.pk])
 
     class Meta:
         verbose_name = "Adicionar Sistema Operacional"
@@ -116,6 +128,9 @@ class Graphics_Engine(models.Model):
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
 
+    def get_absolute_url_update6(self):
+        return reverse('engine_edit', args=[self.pk])
+
     class Meta:
         verbose_name = "Motor Gráfico"
         verbose_name_plural = "Motor Gráfico"
@@ -139,6 +154,8 @@ class Designer(models.Model):
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
+    def get_absolute_url_update7(self):
+        return reverse('designer_edit', args=[self.pk])
     class Meta:
         verbose_name = "designer"
         verbose_name_plural = "designer"
@@ -162,6 +179,8 @@ class Select_Language(models.Model):
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
+    def get_absolute_url_update8(self):
+        return reverse('language_edit', args=[self.pk])
     class Meta:
         verbose_name = "Adicionar Linguagem"
         verbose_name_plural = "Adicionar Linguagem"
@@ -186,13 +205,15 @@ class MinimumRequirements(models.Model):
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
+    def get_absolute_url_update9(self):
+        return reverse('min_requirements_edit', args=[self.pk])
     class Meta:
         verbose_name = "Requisitos Minimos"
         verbose_name_plural = "Requisitos Minimos"
         ordering = ["-create"]
 
     def __str__(self):
-        return self.name
+        return self.description
 
 
 class RecommendedRequirements(models.Model):
@@ -209,13 +230,15 @@ class RecommendedRequirements(models.Model):
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
+    def get_absolute_url_update10(self):
+        return reverse ('max_requirements_edit', args=[self.pk])
     class Meta:
         verbose_name = "Requisitos Recomendados"
         verbose_name_plural = "Requisitos Recomendados"
         ordering = ["-create"]
 
     def __str__(self):
-        return self.name
+        return self.description
 
 
 
@@ -233,6 +256,8 @@ class Player(models.Model):
     description = RichTextField(max_length=500, verbose_name='Descrição', blank=True, null=True)
     status = models.CharField(max_length=15, choices=STATUS, default='disponivel',  null=True)
 
+    def get_absolute_url_update11(self):
+        return reverse ('player_edit', args=[self.pk])
     class Meta:
         verbose_name = "Número de Jogadores"
         verbose_name_plural = "Número de Jogadores"

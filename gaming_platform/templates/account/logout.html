@@ -3,13 +3,16 @@
 
 {% block content %}
 
-    <div class="container-fluid col-8 my-5">
+    <div class="container-fluid col-8 my-5 text-center">
+        
         <h2>Sair</h2>
         <p>Você tem certeza que deseja sair?</p>
-        <form method="post" action="{% url 'account_logout' %}">
+        <form method="post">
             {% csrf_token %}
-            <button class="btn btn-danger" type="submit">Sair</button>
+            <button action="{% url 'account_logout' %}" class="btn btn-danger col-4" type="submit">Sair</button>
+            <a href="{% url 'home' %}" class="btn btn btn-success col-lg-4">Cancelar</a>
         </form>
+        
     </div>
 
 {% endblock %}
