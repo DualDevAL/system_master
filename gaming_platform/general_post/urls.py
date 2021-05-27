@@ -68,6 +68,8 @@ urlpatterns = [
     path('player/player_new', views.PlayerCreateView.as_view(), name='player_new'),
     path('player/<int:pk>/player_edit', views.PlayerUpdateView.as_view(), name='player_edit'),
 
+#===================================PDF================================================
 
+    path('detail/receipt_pdf/<int:pk>', views.SalePDFDetailView.as_view(), name="receipt_pdf"),
 ]
 

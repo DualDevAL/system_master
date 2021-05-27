@@ -30,11 +30,12 @@
                         <a class="text-dark" href="{{ post.get_absolute_url }}"  style="text-decoration: none;" >
                           <p class="card-text text-center">{{ post.description|safe|truncatechars:'200' }}</p>
                         </a>
-
+                        <small class="text-muted ">status: {{post.status}} </small> 
                       </div>
                     
-                    <div class="card-footer">
-                        <small class="text-muted ">status: {{post.status}} </small>
+                    <div class="card-footer text-center">
+                  
+                        <a href="{{post.get_absolute_url_pdf}}" target="blank" class="btn btn-primary col-6">Comprar</a>
                     </div>
                   </div>
 

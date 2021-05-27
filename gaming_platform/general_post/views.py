@@ -11,6 +11,7 @@ from .forms import Postform
 from django.contrib.messages.context_processors import messages
 from django.urls import reverse_lazy
 from django.contrib import messages
+from easy_pdf.views import PDFTemplateResponseMixin
 
 # =================== Templates secudary ===============================
 class AtributesListView(ListView):
@@ -332,3 +333,9 @@ class PlayerUpdateView(UpdateView):
     def get_success_url(self):
         messages.success(self.request, 'Alterado com sucesso!')
         return reverse_lazy('home_player')
+
+
+#================= PDF ==================================
+class SalePDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Post
+    template_name = 'detail/receipt_pdf.html'

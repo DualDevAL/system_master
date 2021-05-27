@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',''
     'allauth.socialaccount',
     'crispy_forms',
+    'easy_pdf',
     # local
     #'users.apps.UsersConfig',
     #'pages.apps.PagesConfig',

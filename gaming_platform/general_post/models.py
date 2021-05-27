@@ -312,6 +312,9 @@ class Post(models.Model):
     def get_absolute_url_delete(self):
         return reverse('post_delete', args=[self.pk])
 
+    def get_absolute_url_pdf(self):
+        return reverse('receipt_pdf', args=[self.pk])
+
     class Meta:
         verbose_name = "Adicionar Jogo"
         verbose_name_plural = "Adicionar Jogos"

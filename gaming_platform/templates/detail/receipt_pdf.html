@@ -1,0 +1,31 @@
+{% extends "easy_pdf/base.html" %}
+
+{% block extra_style %}
+    <style type="text/css">
+        body {
+            font-family: "Helvetica", "sans-serif";
+            color:#333;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<meta charset="utf-8">
+
+<div id="content">
+    <div class="main">
+        <center><h1>Recibo da venda Número {{ object.pk }}</h1></center>
+        <center>Venda realizada em {{ object.published}}</center>
+        <br/>
+        <br/>
+        <h3>Dados da Venda</h3>
+        <p><b>Nome:</b> {{ object.title }}</p>
+        <p><b>Valor:</b> {{ object.value }}</p>
+        <p><b>Descrição:</b> {{ object.description }}</p>
+        <br/>
+        <h3>Dados do cliente</h3>
+        <p><b>Comprador:</b> {{ object.author }}</p>
+    </div>
+</div>
+{% endblock %}
