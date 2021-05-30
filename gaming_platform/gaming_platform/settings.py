@@ -26,7 +26,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
- 
+
 
     
 INSTALLED_APPS = [
@@ -98,10 +98,10 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'gaming_platform',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
