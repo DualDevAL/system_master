@@ -34,4 +34,8 @@ docker ps
 
 docker stop id_do_container
 
+.Para acessar o admin, crie um super usuário com o seguinte comando: 
+
+docker-compose exec web python manage.py createsuperuser
+
 
